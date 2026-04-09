@@ -33,16 +33,16 @@
 
       <nav class="sidebar-nav">
         <a href="#home" class="nav-item active">
-          <span class="nav-icon">🏠</span> Home
+          <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span> Home
         </a>
         <a href="#resume" class="nav-item">
-          <span class="nav-icon">📄</span> Resume
+          <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span> Resume
         </a>
         <a href="#projects" class="nav-item">
-          <span class="nav-icon">💻</span> Projects
+          <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg></span> Projects
         </a>
         <a href="#contact" class="nav-item">
-          <span class="nav-icon">✉️</span> Contact
+          <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span> Contact
         </a>
       </nav>
 
@@ -68,10 +68,29 @@
         </div>
 
         <!-- Window Body (Cream background like Image 1) -->
-        <div class="os-body bg-cream">
+        <div class="os-body bg-cream" style="position: relative; overflow: hidden;">
+
+          <!-- Memphis Shapes -->
+          <svg class="memphis-shape shape-1" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8">
+            <path d="M10,10 L90,90 M90,10 L10,90" />
+          </svg>
+          <svg class="memphis-shape shape-2" viewBox="0 0 100 100" fill="currentColor">
+            <circle cx="20" cy="20" r="8" />
+            <circle cx="50" cy="20" r="8" />
+            <circle cx="80" cy="20" r="8" />
+            <circle cx="20" cy="50" r="8" />
+            <circle cx="50" cy="50" r="8" />
+            <circle cx="80" cy="50" r="8" />
+            <circle cx="20" cy="80" r="8" />
+            <circle cx="50" cy="80" r="8" />
+            <circle cx="80" cy="80" r="8" />
+          </svg>
+          <svg class="memphis-shape shape-3" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8">
+            <path d="M10,50 Q25,10 50,50 T90,50" />
+          </svg>
 
           <!-- Profile Header Section -->
-          <section id="home" class="os-section profile-header os-box">
+          <section id="home" class="os-section profile-header os-box reveal">
             <div class="profile-image-wrapper">
               <img src="https://framerusercontent.com/images/cmeVcYI3V58XuVdwQbOZ1NkLc.png?width=400&height=400"
                 alt="Darsh" class="profile-pic">
@@ -84,19 +103,32 @@
                 relations, and driving project success. My expertise spans various frontend and design functions,
                 including UI/UX design, component development, accessible markup, and strategic planning.
               </p>
-
-              <div class="pill-links">
-                <a href="tel:+919541751422" class="yellow-pill">📞 +91 954175 1422</a>
-                <a href="mailto:darshrawat55@gmail.com" class="yellow-pill">✉️ darshrawat55@gmail.com</a>
-              </div>
             </div>
           </section>
+
+          <!-- BRUTALIST MARQUEE -->
+          <div class="marquee-container mb-4">
+            <div class="marquee-content">
+              <span>UI/UX DESIGNER</span>
+              <span>•</span>
+              <span>CREATIVE DEVELOPER</span>
+              <span>•</span>
+              <span>PROBLEM SOLVER</span>
+              <span>•</span>
+              <span>UI/UX DESIGNER</span>
+              <span>•</span>
+              <span>CREATIVE DEVELOPER</span>
+              <span>•</span>
+              <span>PROBLEM SOLVER</span>
+              <span>•</span>
+            </div>
+          </div>
 
           <!-- 2-Column Split for Resume Grid -->
           <div class="resume-grid">
 
             <!-- Left Column: Experience -->
-            <section id="resume" class="os-section os-box left-col">
+            <section id="resume" class="os-section os-box left-col reveal" style="align-self: start;">
 
               <div class="yellow-pill-title mt-4">EDUCATION</div>
 
@@ -104,91 +136,108 @@
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Primary and Secondary Education</div>
                 <h4 class="timeline-role">APS,Udhampur & KV No.1,Udhampur</h4>
-                <div class="timeline-company">Bachelor of Design UX | GPA 3.7/4.0</div>
+                <div class="timeline-company"></div>
               </div>
 
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">Current</div>
                 <h4 class="timeline-role">Graphic Era Hill University,Dehradun</h4>
-                <div class="timeline-company">Bachelor of Design UI/UX </div>
+                <div class="timeline-company">Bachelor of Design UI/UX</div>
               </div>
 
               <div class="yellow-pill-title">EXPERIENCE</div>
 
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
-                <div class="timeline-date">Jan 2025 - Dec 2025</div>
+                <div class="timeline-date">Student</div>
                 <h4 class="timeline-role">UI/UX Designer</h4>
-                <div class="timeline-company">Creative Agency | Full Time</div>
+                <div class="timeline-company"></div>
+              </div>
+
+              <!-- INTERESTS BLOCK TO FILL SPACE -->
+              <div class="yellow-pill-title mt-4">INTERESTS</div>
+              <div class="hobby-tags">
+                <span class="hobby-pill bg-pink">📸 Photography</span>
+                <span class="hobby-pill bg-yellow">🎮 Retro Tech</span>
+                <span class="hobby-pill bg-teal">✍️ Typography</span>
+                <span class="hobby-pill bg-lime">🕹️ Gaming</span>
               </div>
 
             </section>
 
             <!-- Right Column: Tools & Skills -->
-            <section class="os-section os-box right-col">
+            <section class="os-section os-box right-col reveal">
 
-              <div class="yellow-pill-title">LANGUAGE</div>
-              <div class="progress-bars">
-                <div class="progress-item">
-                  <span>English</span>
-                  <div class="bar-container">
-                    <div class="bar-fill" style="width: 90%;"></div>
-                  </div>
-                </div>
-                <div class="progress-item">
-                  <span>Hindi</span>
-                  <div class="bar-container">
-                    <div class="bar-fill" style="width: 100%;"></div>
-                  </div>
-                </div>
-              </div>
+              <h2
+                style="font-size: 2.5rem; margin-bottom: 1rem; border-bottom: var(--border-thick); padding-bottom: 0.5rem;">
+                MY SKILLS</h2>
 
-              <div class="yellow-pill-title mt-4">TOOLS</div>
-              <div class="tool-icons">
-                <div class="tool-icon bg-pink"><i class="devicon-figma-plain"></i> Figma</div>
-                <div class="tool-icon bg-teal"><i class="devicon-react-original"></i> React</div>
-                <div class="tool-icon bg-purple"><i class="devicon-sass-original"></i> SASS</div>
-                <div class="tool-icon bg-white"><i class="devicon-javascript-plain"></i> JS</div>
-              </div>
-
-              <div class="yellow-pill-title mt-4">SKILLS</div>
-              <ul class="brutal-bullet-list">
-                <li>• UI/UX Design</li>
-                <li>• Prototyping</li>
-                <li>• Frontend Dev</li>
-                <li>• User Research</li>
-                <li>• Market Analysis</li>
-                <li>• Wireframing</li>
-                <li>• Team Leading</li>
-                <li>• Communication</li>
+              <div class="yellow-pill-title">1-Technical</div>
+              <ul class="brutal-bullet-list mt-4">
+                <li>• HTML5 / CSS3</li>
+                <li>• JS (ES6+)</li>
+                <li>• React.js</li>
+                <li>• TypeScript</li>
+                <li>• Tailwind CSS</li>
+                <li>• Git / GitHub</li>
               </ul>
+
+              <div class="yellow-pill-title mt-4">2-Design</div>
+              <ul class="brutal-bullet-list mt-4">
+                <li>• UI/UX Design</li>
+                <li>• Wireframing</li>
+                <li>• Prototyping</li>
+                <li>• Design Systems</li>
+                <li>• User Testing</li>
+                <li>• Micro-interactions</li>
+              </ul>
+
+              <div class="yellow-pill-title mt-4">3-Tools & Software</div>
+              <div class="tool-icons mt-4">
+                <div class="tool-icon bg-pink">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+                    alt="Figma" style="width: 2rem; height: 2rem;" />
+                  Figma
+                </div>
+                <div class="tool-icon bg-teal"><i class="devicon-xd-plain colored"></i> Adobe XD</div>
+                <div class="tool-icon bg-purple"><i class="devicon-photoshop-plain colored"></i> Photoshop</div>
+                <div class="tool-icon bg-white" style="color: black;"><i class="devicon-illustrator-plain colored"></i>
+                  Illustrator</div>
+                <div class="tool-icon bg-lime"><i class="devicon-vscode-plain colored"></i> VS Code</div>
+              </div>
 
             </section>
           </div>
 
           <!-- Projects Section (incorporating Image 3 block layout) -->
-          <section id="projects" class="os-section os-box projects-box">
+          <section id="projects" class="os-section os-box projects-box reveal">
             <div class="yellow-pill-title mb-4">CASE STUDIES</div>
 
             <div class="brutal-project-grid">
 
               <div class="project-info-card bg-pink">
-                <div class="sticker sticker-cloud">☁️</div>
+                <div class="sticker sticker-cloud">
+                  <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/26c5.svg" style="width: 1em; height: 1em; display: block; border: none; box-shadow: none; transform: none;" alt="Weather">
+                </div>
                 <h3>Weather App</h3>
                 <p>Built with React & API</p>
                 <a href="#" class="view-btn">View →</a>
               </div>
 
               <div class="project-info-card bg-teal">
-                <div class="sticker sticker-note">📝</div>
+                <div class="sticker sticker-note">
+                  <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f4dd.svg" style="width: 1em; height: 1em; display: block; border: none; box-shadow: none; transform: none;" alt="Sticky Note">
+                </div>
                 <h3>Sticky Notes App</h3>
                 <p>Built with React Web Storage</p>
                 <a href="#" class="view-btn">View →</a>
               </div>
 
               <div class="project-info-card bg-lime">
-                <div class="sticker sticker-star">✨</div>
+                <div class="sticker sticker-star">
+                  <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f4ca.svg" style="width: 1em; height: 1em; display: block; border: none; box-shadow: none; transform: none;" alt="Fintech Chart">
+                </div>
                 <h3>Fintech Dashboard</h3>
                 <p>Figma Prototype</p>
                 <a href="#" class="view-btn">View →</a>
@@ -197,7 +246,7 @@
             </div>
           </section>
           <!-- Contact Section -->
-          <section id="contact" class="os-section os-box mt-4 bg-teal">
+          <section id="contact" class="os-section os-box mt-4 bg-teal reveal">
             <div class="yellow-pill-title mb-4">CONTACT</div>
             <div style="display: flex; gap: 2rem; align-items: stretch; flex-wrap: wrap;">
               <div class="contact-info-card"
@@ -206,24 +255,15 @@
                 <p style="font-weight: bold; margin-bottom: 2rem;">I'm currently open for new opportunities. Whether you
                   have a question or just want to say hi, I'll try my best to get back to you!</p>
                 <div style="display: flex; gap: 1rem;">
+                  <div class="pill-links">
+                    <a href="tel:+919541751422" class="yellow-pill">📞 +91 954175 1422</a>
+
+                  </div>
                   <a href="mailto:darshrawat55@gmail.com" class="yellow-pill" style="margin: 0;">Email Me ✉️</a>
                   <a href="#" class="yellow-pill" style="margin: 0; background: var(--bg-pink);">LinkedIn 💼</a>
                 </div>
+
               </div>
-              <form class="brutal-form"
-                style="flex: 1; display: flex; flex-direction: column; gap: 1rem; background: #fff; padding: 2rem; border: var(--border-thick); box-shadow: var(--shadow-brutal-sm); border-radius: var(--radius-box);"
-                onsubmit="event.preventDefault();">
-                <input type="text" placeholder="Name"
-                  style="padding: 1rem; border: 2px solid #000; font-family: inherit; font-weight: bold;">
-                <input type="email" placeholder="Email"
-                  style="padding: 1rem; border: 2px solid #000; font-family: inherit; font-weight: bold;">
-                <textarea placeholder="Message" rows="4"
-                  style="padding: 1rem; border: 2px solid #000; font-family: inherit; font-weight: bold; resize: vertical;"></textarea>
-                <button
-                  style="padding: 1rem; background: var(--bg-lime); border: 2px solid #000; font-weight: bold; font-family: inherit; font-size: 1.2rem; cursor: pointer; box-shadow: 2px 2px 0px #000;">SEND
-                  MESSAGE 🚀</button>
-              </form>
-            </div>
           </section>
 
         </div> <!-- /os-body -->

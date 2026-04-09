@@ -1,101 +1,111 @@
 document.addEventListener('DOMContentLoaded', () => {
   /* =========================================
-     DATE & YEAR
+     SMOOTH SCROLLING FOR NAV LINKS
      ========================================= */
-  const yearSpan = document.getElementById('year');
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-  }
-
-  /* =========================================
-     DARK/LIGHT THEME TOGGLE
-     ========================================= */
-  const themeToggle = document.getElementById('theme-toggle');
-  const body = document.body;
+  const navItems = document.querySelectorAll('.nav-item');
   
-  // Check for saved theme in localStorage or system preferences
-  const savedTheme = localStorage.getItem('theme');
-  const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  
-  if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-    body.classList.remove('light-mode');
-    body.classList.add('dark-mode');
-  } else {
-    body.classList.remove('dark-mode');
-    body.classList.add('light-mode');
-  }
+  navItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      const targetId = item.getAttribute('href');
+      
+      if (targetId && targetId.startsWith('#')) {
+        e.preventDefault();
+        const targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+          // Custom smooth scroll animation (Guaranteed to work regardless of OS settings or CSS bugs)
+          const targetPosition = targetSection.getBoundingClientRect().top + window.scrollY - 50;
+          const startPosition = window.scrollY;
+          const distance = targetPosition - startPosition;
+          let startTime = null;
 
-  themeToggle.addEventListener('click', () => {
-    if (body.classList.contains('light-mode')) {
-      body.classList.replace('light-mode', 'dark-mode');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      body.classList.replace('dark-mode', 'light-mode');
-      localStorage.setItem('theme', 'light');
-    }
-  });
+          function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const progress = Math.min(timeElapsed / 600, 1); // 600ms duration
+            
+            // easeOutQuart easing function for very smooth stop
+            const ease = 1 - Math.pow(1 - progress, 4);
+            
+            window.scrollTo(0, startPosition + distance * ease);
+            
+            if (timeElapsed < 600) {
+              requestAnimationFrame(animation);
+            }
+          }
+          
+          requestAnimationFrame(animation);
 
-  /* =========================================
-     MOBILE MENU TOGGLE
-     ========================================= */
-  const mobileToggle = document.getElementById('mobile-toggle');
-  const navLinks = document.getElementById('nav-links');
-  const allNavLinks = document.querySelectorAll('.nav-link');
+          // Element Highlighting Logic
+          let elementsToFlash = [targetSection];
+          
+          // If Resume is clicked, make BOTH Education and Skills columns flash
+          if (targetId === '#resume') {
+             const skillsColumn = document.querySelector('.right-col');
+             if (skillsColumn) {
+               elementsToFlash.push(skillsColumn);
+             }
+          }
 
-  mobileToggle.addEventListener('click', () => {
-    mobileToggle.classList.toggle('active');
-    navLinks.classList.toggle('nav-open');
-  });
-
-  // Close mobile menu when a link is clicked
-  allNavLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileToggle.classList.remove('active');
-      navLinks.classList.remove('nav-open');
+          // Apply flash animation to the elements
+          elementsToFlash.forEach(el => {
+            el.classList.remove('section-flash-highlight');
+            void el.offsetWidth; // Trigger reflow
+            el.classList.add('section-flash-highlight');
+            
+            setTimeout(() => {
+              el.classList.remove('section-flash-highlight');
+            }, 800);
+          });
+          
+          // Optionally push state to keep URL updated without jumping
+          history.pushState(null, '', targetId);
+        }
+      }
     });
   });
 
   /* =========================================
-     STICKY NAVBAR ON SCROLL
+     ACTIVE NAV LINK UPDATING ON SCROLL
      ========================================= */
-  const navbar = document.getElementById('navbar');
-  
-  const handleScroll = () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  };
-
-  window.addEventListener('scroll', handleScroll);
-  handleScroll(); // init on load
-
-  /* =========================================
-     ACTIVE NAV LINK UPDATING
-     ========================================= */
-  const sections = document.querySelectorAll('section');
+  // Find all sections that are targeted by nav items
+  const sections = Array.from(navItems)
+    .map(item => {
+      const targetId = item.getAttribute('href');
+      if (targetId && targetId.startsWith('#')) {
+        return document.querySelector(targetId);
+      }
+      return null;
+    })
+    .filter(section => section !== null);
   
   const highlightNavLink = () => {
-    let current = '';
+    let currentId = '';
     
+    // Find the section that is currently most visible or at the top
+    const scrollPosition = window.scrollY + 150; // offset
+
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (pageYOffset >= (sectionTop - 200)) {
-        current = section.getAttribute('id');
+      if (scrollPosition >= sectionTop) {
+        currentId = section.getAttribute('id');
       }
     });
 
-    allNavLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
+    if (currentId) {
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === `#${currentId}`) {
+          item.classList.add('active');
+        }
+      });
+    }
   };
 
+  // Add scroll event listener for updating active link
   window.addEventListener('scroll', highlightNavLink);
+  // Initial call
+  highlightNavLink();
 
   /* =========================================
      SCROLL REVEAL ANIMATIONS (Intersection Observer)
@@ -103,17 +113,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const revealElements = document.querySelectorAll('.reveal');
 
   const revealOptions = {
-    threshold: 0.15,
+    threshold: 0.1,
     rootMargin: "0px 0px -50px 0px"
   };
 
   const revealOnScroll = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-      if (!entry.isIntersecting) {
-        return;
-      } else {
-        entry.target.classList.add('active');
-        // Stop observing once animated to improve performance
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal-active');
         observer.unobserve(entry.target);
       }
     });
