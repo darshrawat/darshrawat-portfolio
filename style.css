@@ -240,6 +240,18 @@ p {
     gap: 80px;
 }
 
+.pixel-sparkle {
+    animation: float 4s ease-in-out infinite;
+}
+
+.sp-1 { animation-delay: 0s; }
+.sp-2 { animation-delay: 1.5s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+}
+
 .skills-list {
     display: flex;
     flex-wrap: wrap;
