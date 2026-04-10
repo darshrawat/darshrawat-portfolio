@@ -1,277 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Darsh | Resume Dashboard</title>
-
-  <meta name="description" content="Personal portfolio of Darsh, UI/UX Designer and Creative Developer.">
-
-  <!-- Google Fonts: Outfit for headings, Space Mono for retro body text -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@400;800&display=swap"
-    rel="stylesheet">
-
-  <!-- Add Devicon for software icons -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berry | Premium Illustrative Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <div class="dashboard-layout">
-
-    <!-- LEFT SIDEBAR (Image 2 style) -->
-    <aside class="sidebar bg-mint">
-      <div class="sidebar-logo">
-        <div class="logo-box">My Portfolio</div>
-      </div>
-
-      <nav class="sidebar-nav">
-        <a href="#home" class="nav-item active">
-          <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span> Home
-        </a>
-        <a href="#resume" class="nav-item">
-          <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span> Resume
-        </a>
-        <a href="#projects" class="nav-item">
-          <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg></span> Projects
-        </a>
-        <a href="#contact" class="nav-item">
-          <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span> Contact
-        </a>
-      </nav>
-
-      <div class="sidebar-footer">
-        <a href="#" class="sidebar-btn">Logout_</a>
-      </div>
-    </aside>
-
-    <!-- MAIN CONTENT (Canvas) -->
-    <main class="main-content">
-
-      <!-- RETRO OS WINDOW (Image 1 style) -->
-      <div class="os-window">
-
-        <!-- Window Titlebar -->
-        <div class="os-titlebar">
-          <div class="titlebar-text">C:\Users\Darsh\portfolio.exe</div>
-          <div class="os-controls">
-            <span class="ctrl-btn">-</span>
-            <span class="ctrl-btn">□</span>
-            <span class="ctrl-btn">x</span>
-          </div>
+    <!-- SECTION: HERO -->
+    <section class="hero">
+        <div class="hero-bg-media">
+            <img src="premium_dark_hero_illustration_1775781580549.png" alt="Dark Forest Skull Illustration">
         </div>
+        <div class="hero-overlay"></div>
+        
+        <div class="grid-container">
+            <div class="hero-title-group">
+                <span class="mono-tag reveal">[ MISSION_INIT // 2026 ]</span>
+                <h1 class="reveal">LAXMI<br>SINGH</h1>
+            </div>
+            <div class="hero-meta reveal">
+                <p class="text-dim">Visual Architect & Illustrator blending the organic soul of hand-drawn art with modern digital precision.</p>
+                <div style="margin-top: 20px;">
+                    <span class="mono-tag" style="color: var(--accent-purple);">// BERRY_IDENTITY</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Window Body (Cream background like Image 1) -->
-        <div class="os-body bg-cream" style="position: relative; overflow: hidden;">
+    <!-- SECTION: ABOUT -->
+    <section id="about" class="section-margin">
+        <div class="grid-container about">
+            <div class="about-text reveal">
+                <span class="mono-tag">01. ORIGIN_STORY</span>
+                <h2 style="font-size: 4rem; margin: 20px 0;">ARTIST AT<br>HEART.</h2>
+                <p>Based in Dehradun, India. I am a visual storyteller wandering this strange planet. I don't just "design" (that's for corporates). I breathe life into pixels, making them cry, laugh, and dance through illustrative precision.</p>
+                <p style="margin-top: 20px; color: var(--text-dim);">My work is a dialogue between the analog past (hand-drawn textures) and the digital future (Y2K glows and pixel accents).</p>
+            </div>
+            
+            <div class="about-image reveal">
+                <div class="frame-editorial">
+                    <img src="assets/hero-profile.png" alt="Berry Profile" style="width: 100%; display: block; filter: grayscale(0.5) contrast(1.1);">
+                </div>
+                <!-- Pixel Accent -->
+                <div style="position: absolute; bottom: -20px; left: -20px; width: 60px; height: 60px; border: 2px solid var(--accent-green);"></div>
+            </div>
+        </div>
+    </section>
 
-          <!-- Memphis Shapes -->
-          <svg class="memphis-shape shape-1" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8">
-            <path d="M10,10 L90,90 M90,10 L10,90" />
-          </svg>
-          <svg class="memphis-shape shape-2" viewBox="0 0 100 100" fill="currentColor">
-            <circle cx="20" cy="20" r="8" />
-            <circle cx="50" cy="20" r="8" />
-            <circle cx="80" cy="20" r="8" />
-            <circle cx="20" cy="50" r="8" />
-            <circle cx="50" cy="50" r="8" />
-            <circle cx="80" cy="50" r="8" />
-            <circle cx="20" cy="80" r="8" />
-            <circle cx="50" cy="80" r="8" />
-            <circle cx="80" cy="80" r="8" />
-          </svg>
-          <svg class="memphis-shape shape-3" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8">
-            <path d="M10,50 Q25,10 50,50 T90,50" />
-          </svg>
-
-          <!-- Profile Header Section -->
-          <section id="home" class="os-section profile-header os-box reveal">
-            <div class="profile-image-wrapper">
-              <img src="https://framerusercontent.com/images/cmeVcYI3V58XuVdwQbOZ1NkLc.png?width=400&height=400"
-                alt="Darsh" class="profile-pic">
+    <!-- SECTION: EDUCATION & EXPERIENCE -->
+    <section class="section-margin">
+        <div class="grid-container">
+            <div class="work-intro">
+                <span class="mono-tag">02. ARCHIVES</span>
+                <h2 style="font-size: 3rem; margin-top: 10px;">CREDENTIALS // HISTORY</h2>
+            </div>
+            
+            <div class="pixel-border reveal" style="grid-column: 1 / span 6; padding: 40px; background: var(--glass);">
+                <h3>EDUCATION</h3>
+                <div style="margin-top: 30px;">
+                    <p class="mono-tag">Visual Arts @ GEU</p>
+                    <h4 style="font-size: 1.5rem; margin: 10px 0;">Bachelor of Visual Arts</h4>
+                    <p class="text-dim">2024 - Present (Focus on Spatial Identity & Digital Illustration)</p>
+                </div>
+                <div style="margin-top: 30px;">
+                    <p class="mono-tag">Graphic Design @ ZICA</p>
+                    <h4 style="font-size: 1.5rem; margin: 10px 0;">Professional Certification</h4>
+                    <p class="text-dim">Exploring advanced typography and brand architecture.</p>
+                </div>
             </div>
 
-            <div class="profile-info">
-              <h1 class="profile-name">Darsh Singh Rawat</h1>
-              <p class="profile-bio">
-                My Name is Darsh, I have dedicated my career to fostering positive digital experiences, enhancing user
-                relations, and driving project success. My expertise spans various frontend and design functions,
-                including UI/UX design, component development, accessible markup, and strategic planning.
-              </p>
+            <div class="pixel-border reveal" style="grid-column: 7 / span 6; padding: 40px; background: var(--glass);">
+                <h3>EXPERIENCE</h3>
+                <div style="margin-top: 30px;">
+                    <p class="mono-tag">Freelance // 2025</p>
+                    <h4 style="font-size: 1.5rem; margin: 10px 0;">Lead Comic Illustrator</h4>
+                    <p class="text-dim">Delivered over 20+ custom comic visual concepts on fiverr, reaching top-tier client satisfaction.</p>
+                </div>
+                <div style="margin-top: 30px;">
+                    <p class="mono-tag">Open for Missions</p>
+                    <h4 style="font-size: 1.5rem; margin: 10px 0; color: var(--accent-green);">READY TO DEPLOY</h4>
+                    <p class="text-dim">Currently seeking opportunities that challenge the boundaries of illustrative UI.</p>
+                </div>
             </div>
-          </section>
+        </div>
+    </section>
 
-          <!-- BRUTALIST MARQUEE -->
-          <div class="marquee-container mb-4">
-            <div class="marquee-content">
-              <span>UI/UX DESIGNER</span>
-              <span>•</span>
-              <span>CREATIVE DEVELOPER</span>
-              <span>•</span>
-              <span>PROBLEM SOLVER</span>
-              <span>•</span>
-              <span>UI/UX DESIGNER</span>
-              <span>•</span>
-              <span>CREATIVE DEVELOPER</span>
-              <span>•</span>
-              <span>PROBLEM SOLVER</span>
-              <span>•</span>
+    <!-- SECTION: PORTFOLIO -->
+    <section id="work" class="section-margin">
+        <div class="grid-container">
+            <div class="work-intro">
+                <span class="mono-tag">03. SELECTED_RECORDS</span>
+                <h2 style="font-size: 5rem;">WORKS.</h2>
             </div>
-          </div>
 
-          <!-- 2-Column Split for Resume Grid -->
-          <div class="resume-grid">
-
-            <!-- Left Column: Experience -->
-            <section id="resume" class="os-section os-box left-col reveal" style="align-self: start;">
-
-              <div class="yellow-pill-title mt-4">EDUCATION</div>
-
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Primary and Secondary Education</div>
-                <h4 class="timeline-role">APS,Udhampur & KV No.1,Udhampur</h4>
-                <div class="timeline-company"></div>
-              </div>
-
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Current</div>
-                <h4 class="timeline-role">Graphic Era Hill University,Dehradun</h4>
-                <div class="timeline-company">Bachelor of Design UI/UX</div>
-              </div>
-
-              <div class="yellow-pill-title">EXPERIENCE</div>
-
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Student</div>
-                <h4 class="timeline-role">UI/UX Designer</h4>
-                <div class="timeline-company"></div>
-              </div>
-
-              <!-- INTERESTS BLOCK TO FILL SPACE -->
-              <div class="yellow-pill-title mt-4">INTERESTS</div>
-              <div class="hobby-tags">
-                <span class="hobby-pill bg-pink">📸 Photography</span>
-                <span class="hobby-pill bg-yellow">🎮 Retro Tech</span>
-                <span class="hobby-pill bg-teal">✍️ Typography</span>
-                <span class="hobby-pill bg-lime">🕹️ Gaming</span>
-              </div>
-
-            </section>
-
-            <!-- Right Column: Tools & Skills -->
-            <section class="os-section os-box right-col reveal">
-
-              <h2
-                style="font-size: 2.5rem; margin-bottom: 1rem; border-bottom: var(--border-thick); padding-bottom: 0.5rem;">
-                MY SKILLS</h2>
-
-              <div class="yellow-pill-title">1-Technical</div>
-              <ul class="brutal-bullet-list mt-4">
-                <li>• HTML5 / CSS3</li>
-                <li>• JS (ES6+)</li>
-                <li>• React.js</li>
-                <li>• TypeScript</li>
-                <li>• Tailwind CSS</li>
-                <li>• Git / GitHub</li>
-              </ul>
-
-              <div class="yellow-pill-title mt-4">2-Design</div>
-              <ul class="brutal-bullet-list mt-4">
-                <li>• UI/UX Design</li>
-                <li>• Wireframing</li>
-                <li>• Prototyping</li>
-                <li>• Design Systems</li>
-                <li>• User Testing</li>
-                <li>• Micro-interactions</li>
-              </ul>
-
-              <div class="yellow-pill-title mt-4">3-Tools & Software</div>
-              <div class="tool-icons mt-4">
-                <div class="tool-icon bg-pink">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
-                    alt="Figma" style="width: 2rem; height: 2rem;" />
-                  Figma
+            <!-- CASE STUDY 01 -->
+            <article class="case-study revealed">
+                <div class="case-visual">
+                    <div class="case-img-wrap">
+                        <img src="case_study_thumbnails_1775781604261.png" alt="Aura Fintech UI">
+                    </div>
                 </div>
-                <div class="tool-icon bg-teal"><i class="devicon-xd-plain colored"></i> Adobe XD</div>
-                <div class="tool-icon bg-purple"><i class="devicon-photoshop-plain colored"></i> Photoshop</div>
-                <div class="tool-icon bg-white" style="color: black;"><i class="devicon-illustrator-plain colored"></i>
-                  Illustrator</div>
-                <div class="tool-icon bg-lime"><i class="devicon-vscode-plain colored"></i> VS Code</div>
-              </div>
+                <div class="case-content">
+                    <span class="mono-tag" style="color: var(--accent-purple);">// 01_FINTECH_EVOLUTION</span>
+                    <h3 style="font-size: 2.5rem; margin: 15px 0;">AURA <br>FINTECH</h3>
+                    
+                    <div style="margin: 20px 0;">
+                        <p style="font-size: 0.9rem; margin-bottom: 10px;"><strong style="color: var(--accent-green);">PROBLEM:</strong> Fragmented financial tracking for creative freelancers.</p>
+                        <p style="font-size: 0.9rem; margin-bottom: 10px;"><strong style="color: var(--accent-green);">PROCESS:</strong> Built high-density modular dashboards using Y2K glow logic and pixel-perfect grids.</p>
+                        <p style="font-size: 0.9rem; margin-bottom: 10px;"><strong style="color: var(--accent-green);">OUTCOME:</strong> A 30% increase in user engagement through aesthetic financial visualization.</p>
+                    </div>
 
-            </section>
-          </div>
-
-          <!-- Projects Section (incorporating Image 3 block layout) -->
-          <section id="projects" class="os-section os-box projects-box reveal">
-            <div class="yellow-pill-title mb-4">CASE STUDIES</div>
-
-            <div class="brutal-project-grid">
-
-              <div class="project-info-card bg-pink">
-                <div class="sticker sticker-cloud">
-                  <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/26c5.svg" style="width: 1em; height: 1em; display: block; border: none; box-shadow: none; transform: none;" alt="Weather">
+                    <div style="margin-top: 30px;">
+                        <a href="#" class="glow-btn" style="padding: 10px 20px; font-size: 0.8rem;">VIEW DEPLOYMENT</a>
+                    </div>
                 </div>
-                <h3>Weather App</h3>
-                <p>Built with React & API</p>
-                <a href="#" class="view-btn">View →</a>
-              </div>
+            </article>
 
-              <div class="project-info-card bg-teal">
-                <div class="sticker sticker-note">
-                  <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f4dd.svg" style="width: 1em; height: 1em; display: block; border: none; box-shadow: none; transform: none;" alt="Sticky Note">
+            <!-- CASE STUDY 02 -->
+            <article class="case-study revealed">
+                <div class="case-visual" style="grid-column: 5 / span 8; order: 2;">
+                    <div class="case-img-wrap">
+                        <img src="case_study_thumbnails_1775781604261.png" alt="Lumina Interfaces" style="object-position: bottom;">
+                    </div>
                 </div>
-                <h3>Sticky Notes App</h3>
-                <p>Built with React Web Storage</p>
-                <a href="#" class="view-btn">View →</a>
-              </div>
+                <div class="case-content" style="grid-column: 1 / span 4; order: 1; text-align: right;">
+                    <span class="mono-tag" style="color: var(--accent-green);">// 02_SPATIAL_GENESIS</span>
+                    <h3 style="font-size: 2.5rem; margin: 15px 0;">LUMINA <br>INTERFACES</h3>
+                    
+                    <div style="margin: 20px 0;">
+                        <p style="font-size: 0.9rem; margin-bottom: 10px;"><strong style="color: var(--accent-purple);">PROBLEM:</strong> Cognitive overload in smart-home ecosystem management.</p>
+                        <p style="font-size: 0.9rem; margin-bottom: 10px;"><strong style="color: var(--accent-purple);">PROCESS:</strong> Designed minimalist spatial gestures focused on fluidity and organic response.</p>
+                        <p style="font-size: 0.9rem; margin-bottom: 10px;"><strong style="color: var(--accent-purple);">OUTCOME:</strong> Reduced critical action time by 45% using context-aware light controls.</p>
+                    </div>
 
-              <div class="project-info-card bg-lime">
-                <div class="sticker sticker-star">
-                  <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f4ca.svg" style="width: 1em; height: 1em; display: block; border: none; box-shadow: none; transform: none;" alt="Fintech Chart">
+                    <div style="margin-top: 30px;">
+                        <a href="#" class="glow-btn" style="padding: 10px 20px; font-size: 0.8rem;">CHECK ARCHIVE</a>
+                    </div>
                 </div>
-                <h3>Fintech Dashboard</h3>
-                <p>Figma Prototype</p>
-                <a href="#" class="view-btn">View →</a>
-              </div>
+            </article>
+        </div>
+    </section>
 
+    <!-- SECTION: SKILLS -->
+    <section class="section-margin">
+        <div class="grid-container">
+            <div class="work-intro">
+                <span class="mono-tag">04. SYSTEM_CORE</span>
+                <h2 style="font-size: 3rem; margin-top: 10px;">SKILLS & TOOLS</h2>
             </div>
-          </section>
-          <!-- Contact Section -->
-          <section id="contact" class="os-section os-box mt-4 bg-teal reveal">
-            <div class="yellow-pill-title mb-4">CONTACT</div>
-            <div style="display: flex; gap: 2rem; align-items: stretch; flex-wrap: wrap;">
-              <div class="contact-info-card"
-                style="flex: 1; background: #fff; padding: 2rem; border: var(--border-thick); box-shadow: var(--shadow-brutal-sm); border-radius: var(--radius-box);">
-                <h3 style="font-size: 2rem; margin-bottom: 1rem;">Let's build something awesome.</h3>
-                <p style="font-weight: bold; margin-bottom: 2rem;">I'm currently open for new opportunities. Whether you
-                  have a question or just want to say hi, I'll try my best to get back to you!</p>
-                <div style="display: flex; gap: 1rem;">
-                  <div class="pill-links">
-                    <a href="tel:+919541751422" class="yellow-pill">📞 +91 954175 1422</a>
-
-                  </div>
-                  <a href="mailto:darshrawat55@gmail.com" class="yellow-pill" style="margin: 0;">Email Me ✉️</a>
-                  <a href="#" class="yellow-pill" style="margin: 0; background: var(--bg-pink);">LinkedIn 💼</a>
+            
+            <div class="skills-grid reveal">
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>ILLUSTRATION</h3>
+                    <p class="text-dim">Hand-drawn soul mixed with digital precision.</p>
                 </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🧩</div>
+                    <h3>UI ARCHITECTURE</h3>
+                    <p class="text-dim">Constructing scalable and unique design systems.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🛰️</div>
+                    <h3>Y2K AESTHETICS</h3>
+                    <p class="text-dim">Mastering gradients, glows, and retro-futurism.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">💾</div>
+                    <h3>PIXEL ART</h3>
+                    <p class="text-dim">Decorative accents for modern components.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-              </div>
-          </section>
+    <!-- SECTION: FOOTER -->
+    <footer id="contact" class="footer">
+        <div class="grid-container">
+            <div style="grid-column: 1 / span 12;">
+                <span class="mono-tag">INITIATE_COMMS</span>
+                <h2 class="footer-cta">LET'S BUILD<br>A NEW WORLD.</h2>
+                <a href="mailto:thegraphicskullberry@gmail.com" class="glow-btn">CONTACT@BERRY.SYS</a>
+            </div>
+        </div>
+        <div style="margin-top: 100px; opacity: 0.4;">
+            <p class="mono-tag">© LAXMI_SINGH // 2026 // DESIGNED_WITH_INTENT</p>
+        </div>
+    </footer>
 
-        </div> <!-- /os-body -->
-      </div> <!-- /os-window -->
-    </main>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
